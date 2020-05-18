@@ -16,7 +16,7 @@ html {
   margin-top: 0px;
   margin-bottom: 20px;
   font-weight: 800;
-  margin-left: 20px;
+  margin-left: 10px;
 }
 ol,
 ul {
@@ -57,18 +57,20 @@ ul {
   background: #ddd;
 }
 .game-board {
+  position: relative;
   width: max-content;
   border: 4px solid #610505ba;
   margin-left: 20px;
 }
 .game {
+  position: fixed;
   display: flex;
   flex-direction: column;
   height: 100vh;
   width: 100vw;
   margin: 0;
   overflow: hidden;
-  padding: 40px;
+  padding: 35px;
   background: #906f0b82;
   padding-top: 20px;
 }
