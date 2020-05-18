@@ -55,7 +55,10 @@ ul {
 .kbd-navigation .square:focus {
   background: #ddd;
 }
-
+.game-board {
+  width: max-content;
+  border: 4px solid #610505ba;
+}
 .game {
   display: flex;
   flex-direction: column;
@@ -68,9 +71,20 @@ ul {
   padding-top: 20px;
 }
 .btn {
-  border: 2px solid yellow;
-  border-radius: 2px;
+  background: yellowgreen;
+  border-radius: 10px;
+  box-shadow: 5px 4px #63161694;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 400;
+  margin-top: 25px;
+  padding: 0px 10px;
+  margin-right: 20px;
+  height: 45px;
+  width: 130px;
+}
+.btn:focus {
+  outline: none;
 }
 .game-info {
-  margin-left: 20px;
 }

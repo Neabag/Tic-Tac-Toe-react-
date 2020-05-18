@@ -1,0 +1,32 @@
+.winner {
+  position: fixed;
+  bottom: 6%;
+  left: 10%;
+  height: 16%;
+  width: 73%;
+  z-index: 1;
+  font-size: 40px;
+  font-weight: 600;
+  background: chocolate;
+  border-radius: 10px;
+  box-shadow: 5px 7px #63161694;
+  padding: 11px;
+  text-align: center;
+}
+
+.playAgainBtn {
+  background: yellowgreen;
+  border-radius: 10px;
+  box-shadow: 5px 4px #63161694;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 400;
+  margin-right: 20px;
+  height: 42px;
+  width: 150px;
+  margin-left: 20px;
+  transition: 0.4s ease-out;
+}
+.playAgainBtn:focus {
+  outline: none;
+}
