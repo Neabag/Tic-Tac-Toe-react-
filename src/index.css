@@ -16,6 +16,7 @@ html {
   margin-top: 0px;
   margin-bottom: 20px;
   font-weight: 800;
+  margin-left: 20px;
 }
 ol,
 ul {
@@ -36,15 +37,15 @@ ul {
   background: #9e4422;
   border: 3px solid #dedab6c2;
   float: left;
-  font-size: 75px;
+  font-size: 50px;
   font-weight: bold;
   line-height: 34px;
-  height: 95px;
+  height: 85px;
   margin-right: -1px;
   margin-top: -1px;
   padding: 0;
   text-align: center;
-  width: 95px;
+  width: 85px;
   color: #0000006b;
 }
 
@@ -58,6 +59,7 @@ ul {
 .game-board {
   width: max-content;
   border: 4px solid #610505ba;
+  margin-left: 20px;
 }
 .game {
   display: flex;
@@ -81,10 +83,11 @@ ul {
   padding: 0px 10px;
   margin-right: 20px;
   height: 45px;
-  width: 130px;
+  width: 120px;
 }
 .btn:focus {
   outline: none;
 }
 .game-info {
+  margin-left: 18px;
 }
