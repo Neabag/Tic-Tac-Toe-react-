@@ -55,7 +55,8 @@ class Game extends React.Component {
                 squares: Array(9).fill(null),
             }],
             stepNumber: 0,
-            xIsNext: true
+            xIsNext: true,
+            mode: 1
         }
     }
     handleClick = (i) => {
@@ -66,12 +67,24 @@ class Game extends React.Component {
             return;
         }
         squares[i] = this.state.xIsNext ? 'X' : 'O';
+        if (computerPlayer) {
+            let computerMove = computerPlayer(squares, i);
+            squares[computerMove] = this.state.xIsNext ? 'O' : 'X';
+            console.log(squares[computerMove]);
+        }
+
         this.setState({
             history: history.concat([{ squares: squares }]),
             stepNumber: history.length,
-            xIsNext: !this.state.xIsNext,
+            //xIsNext: !this.state.xIsNext,
 
         });
+    }
+    singlePlayer = (squares) => {
+
+    }
+    doublePlayer = () => {
+
     }
     jumpTo(step) {
         this.setState({
@@ -93,7 +106,7 @@ class Game extends React.Component {
         const history = this.state.history.slice(0, this.state.stepNumber);
 
         if (history.length > 0) {
-            this.setState({ history: history, stepNumber: history.length - 1, xIsNext: !this.state.xIsNext });
+            this.setState({ history: history, stepNumber: history.length - 1 });
         }
 
     }
@@ -159,4 +172,39 @@ function calculateWinner(squares) {
         }
     }
     return null;
-}
+};
+function computerPlayer(squares, index) {
+    let random;
+
+    console.log(index);
+    if (calculateWinner(squares)) {
+        return false;
+    }
+    if (index === 4) {
+        random = Math.floor(Math.random() * squares.length);
+        if (squares[random]) {
+            return computerPlayer(squares, index);
+        } else {
+            return random;
+        }
+    } else if (squares[4] === null) {
+        return 4;
+    } else {
+        let corners = [0, 2, 6, 8];
+        for (let i = 0; i < corners.length; i++) {
+            if (squares[corners[i]] == null) {
+                console.log(corners[i])
+                return corners[i];
+            }
+        }
+        let compArr = [];
+        for (let i = 0; i < squares.length; i++) {
+            if (squares[i] == null) {
+                compArr.push(i)
+            }
+        }
+        console.log(compArr);
+        random = Math.floor(Math.random() * compArr.length);
+        return compArr[random];
+    }
+};
